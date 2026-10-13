@@ -1,16 +1,19 @@
 {
  "actions": [],
  "autoname": "format:{form_name}-{doctype_name}",
- "creation": "2025-03-07 17:58:37.380630",
+ "creation": "2024-07-22 11:43:04.075230",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "form_name",
+  "parent_form",
   "column_break_udhj",
   "doctype_name",
   "nav_order",
+  "is_submittable",
+  "is_child_table",
   "fields_section",
-  "pwa_dashboard_fields",
+  "pwa_form_fields",
   "more_info_section",
   "document_hash_value"
  ],
@@ -28,8 +31,9 @@
   },
   {
    "fieldname": "doctype_name",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "DocType Name",
+   "options": "DocType",
    "reqd": 1
   },
   {
@@ -49,9 +53,26 @@
    "label": "Document Hash Value"
   },
   {
-   "fieldname": "pwa_dashboard_fields",
+   "fieldname": "parent_form",
+   "fieldtype": "Data",
+   "label": "Parent Form"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_submittable",
+   "fieldtype": "Check",
+   "label": "Is Submittable"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_child_table",
+   "fieldtype": "Check",
+   "label": "Is Child Table"
+  },
+  {
+   "fieldname": "pwa_form_fields",
    "fieldtype": "JSON",
-   "label": "PWA Dashboard Fields",
+   "label": "PWA Form Fields",
    "reqd": 1
   },
   {
@@ -67,8 +88,8 @@
  "links": [],
  "modified": "2026-07-09 13:00:00.000000",
  "modified_by": "Administrator",
- "module": "Pwa Build",
- "name": "PWA Dashboard",
+ "module": "GreenLeaf Cafe",
+ "name": "PWA Form",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
